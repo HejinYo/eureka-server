@@ -4,7 +4,7 @@ server:
 spring:
   application:
     # 应用名称
-    name: eureka-server-A
+    name: eureka-server
 
 security:
   basic:
