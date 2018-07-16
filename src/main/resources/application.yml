@@ -5,13 +5,10 @@ spring:
   application:
     # 应用名称
     name: eureka-server
-
-security:
-  basic:
-    enabled: true
-  user:
-    name: hejinyo
-    password: password
+  security:
+    user:
+      name: hejinyo
+      password: password
 
 eureka:
   instance:
@@ -23,7 +20,7 @@ eureka:
     # 服务获取，注册中心不需要
     fetch-registry: false
     service-url:
-      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:8001/eureka
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8001/eureka
   server:
     # 关闭保护机制，确保注册中心可以将不可用的实例正确删除
     enable-self-preservation: false
